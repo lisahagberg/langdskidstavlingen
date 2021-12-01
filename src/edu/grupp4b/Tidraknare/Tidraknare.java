@@ -1,5 +1,5 @@
 package edu.grupp4b.Tidraknare;
 
 public class Tidraknare {
-	int tid;
+	private int tid;
 }
