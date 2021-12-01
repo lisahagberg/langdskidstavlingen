@@ -7,7 +7,8 @@ public class RandomTid {
 	private int min;
 	private Random random = new Random();
 
-	public void setRandomTid() {
+	//Konstruktor sätter tid klockan 10 och random minuter
+	public RandomTid() {
 		this.tim = 10;
 		this.min = random.nextInt(59);
 	}
