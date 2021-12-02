@@ -12,6 +12,7 @@ public class SkapaSkidakare {
 			skidakare[i].setEfternamn("Glid" + i);
 			skidakare[i].setLand("Swe");
 			skidakare[i].setKlubb("Bollnäs IF");
+			skidakare[i].setAkarnummer(i);
 
 		}
 		System.out.println("5 skidåkare skapade");
