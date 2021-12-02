@@ -2,12 +2,12 @@ package edu.grupp4b.random;
 
 import java.util.Random;
 
-public class LottaStartnummer {
+public class RandomAkarnummer {
 	private int startnummer;
 	private Random random = new Random();
 
 	//Konstruktor sätter ett random startnummer
-	public LottaStartnummer() {
+	public RandomAkarnummer() {
 		this.startnummer = random.nextInt(999) +1;
 	}
 	

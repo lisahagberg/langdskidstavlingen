@@ -1,6 +1,6 @@
 package langdskidstavlingen;
 
-import edu.grupp4b.random.LottaStartnummer;
+import edu.grupp4b.random.RandomAkarnummer;
 import edu.grupp4b.random.RandomTid;
 
 public class Main {
@@ -14,7 +14,7 @@ public class Main {
 		
 		
 		//------TEST FÖR LOTTA STARTNUMMER ---------
-		LottaStartnummer ls = new LottaStartnummer();
+		RandomAkarnummer ls = new RandomAkarnummer();
 		ls.setStartnummer();
 		System.out.println(ls);
 		//------TEST FÖR LOTTA STARTNUMMER ---------
