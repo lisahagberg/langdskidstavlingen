@@ -2,22 +2,22 @@ package edu.grupp4b.skidakare;
 
 public class Skidakare {
 	
-	private String efternamn;
 	private String fornamn;
+	private String efternamn;
 	private String land;
 	private String klubb;
 	
-	public String getEfternamn() {
-		return efternamn;
-	}
-	public void setEfternamn(String efternamn) {
-		this.efternamn = efternamn;
-	}
 	public String getFornamn() {
 		return fornamn;
 	}
 	public void setFornamn(String fornamn) {
 		this.fornamn = fornamn;
+	}
+	public String getEfternamn() {
+		return efternamn;
+	}
+	public void setEfternamn(String efternamn) {
+		this.efternamn = efternamn;
 	}
 	public String getLand() {
 		return land;
@@ -33,7 +33,7 @@ public class Skidakare {
 	}
 	@Override
 	public String toString() {
-		return "Skidakare [efternamn=" + efternamn + ", fornamn=" + fornamn + ", land=" + land + ", klubb=" + klubb
+		return "Namn: " + fornamn + efternamn + ", Land: " + land + ", Klubb: " + klubb
 				+ "]";
 	}
 	

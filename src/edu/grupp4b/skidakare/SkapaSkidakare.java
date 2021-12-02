@@ -1,25 +1,23 @@
 package edu.grupp4b.skidakare;
 
 public class SkapaSkidakare {
-	
-	public static void Skapa() {
+
+	 public static void Skapa() {
 
 		Skidakare[] skidakare = new Skidakare[5];
 
 		for (int i = 0; i < skidakare.length; i++) {
-			skidakare[i].setFornamn("Åkare");
-			skidakare[i].setEfternamn(": " + i);
+			skidakare[i] = new Skidakare();
+			skidakare[i].setFornamn("Inge ");
+			skidakare[i].setEfternamn("Glid" + i);
 			skidakare[i].setLand("Swe");
 			skidakare[i].setKlubb("Bollnäs IF");
+
 		}
-		
+		System.out.println("5 skidåkare skapade");
 		for (int i = 0; i < skidakare.length; i++) {
-			skidakare[i].getFornamn();
-			skidakare[i].getEfternamn();
-			skidakare[i].getLand();
-			skidakare[i].getKlubb();
-		
+			System.out.println(skidakare[i]);
 		}
-	
+
 	}
 }
