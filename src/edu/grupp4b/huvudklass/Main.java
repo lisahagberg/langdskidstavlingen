@@ -1,4 +1,4 @@
-package langdskidstavlingen;
+package edu.grupp4b.huvudklass;
 
 public class Main {
 
