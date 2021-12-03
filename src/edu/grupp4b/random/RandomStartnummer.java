@@ -7,21 +7,20 @@ import java.util.Random;
 public class RandomStartnummer {
 	
 	private int startnummer;
+	private int mySize;	
+	private List<Integer> myList = new ArrayList<Integer>(mySize);
 	
-	public void createRandomArrayList() {
-		int mySize = 5;		
-		List<Integer> myList = new ArrayList<Integer>(mySize);
+	//Konstruktor
+	public RandomStartnummer() {
+		mySize = 5;
         for(int i = 1; i <= mySize; i++) {
         	myList.add(i);
         }
-        Random rand = new Random();
-        //while(myList.size() > 0) {
-            int index = rand.nextInt(myList.size());
-            //System.out.println("Testar Random: "+myList.remove(index));
-            startnummer = myList.remove(index);
-        //}
 	}
+	
 	public int getStartnummer() {
-		return startnummer;
+		Random rand = new Random();
+		int index = rand.nextInt(myList.size());
+		return startnummer = myList.remove(index);
 	}
 }

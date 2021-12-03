@@ -7,6 +7,7 @@ public class Skidakare {
 	private String land;
 	private String klubb;
 	private int akarnummer;
+	private int startnummer;
 	
 	public String getFornamn() {
 		return fornamn;
@@ -38,9 +39,16 @@ public class Skidakare {
 	public void setAkarnummer(int akarnummer) {
 		this.akarnummer = akarnummer;
 	}
+	public int getStartnummer() {
+		return startnummer;
+	}
+	public void setStartnummer(int startnummer) {
+		this.startnummer = startnummer;
+	}
 	@Override
 	public String toString() {
-		return "Namn: " + fornamn + efternamn + ", Land: " + land + ", Klubb: " + klubb + ", Åkarnummer: " + akarnummer;
+		return "Namn: " + fornamn + efternamn + ", Land: " + land + ", Klubb: " + klubb
+				+ String.format(", Åkarnummer: %3d", akarnummer) + ", Startnummer: " + startnummer;
 	}
 	
 }
