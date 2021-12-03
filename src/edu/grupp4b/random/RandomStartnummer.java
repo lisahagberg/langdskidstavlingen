@@ -15,7 +15,7 @@ public class RandomStartnummer {
         Random rand = new Random();
         while(myList.size() > 0) {
             int index = rand.nextInt(myList.size());
-            System.out.println("Testar RandomStartnummer: "+myList.remove(index));
+            System.out.println("Testar Random: "+myList.remove(index));
         }
 	}
 }
