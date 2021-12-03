@@ -2,6 +2,7 @@ package edu.grupp4b.huvudklass;
 
 import java.util.Scanner;
 
+import edu.grupp4b.random.RandomStartnummer;
 import edu.grupp4b.skidakare.SkapaSkidakare;
 
 import edu.grupp4b.random.*;
@@ -21,5 +22,6 @@ public class Main {
 			int mellanrum = scanner.nextInt();
 		}
 		SkapaSkidakare.Skapa();
+		
 	}	
 }
