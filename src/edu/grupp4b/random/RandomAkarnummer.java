@@ -11,6 +11,10 @@ public class RandomAkarnummer {
 		this.akarnummer = random.nextInt(999) +1;
 	}
 	
+	public int getAkarnummer() {
+		return akarnummer;
+	}
+
 	@Override
 	public String toString() {
 		return "Startnummer: " + akarnummer;

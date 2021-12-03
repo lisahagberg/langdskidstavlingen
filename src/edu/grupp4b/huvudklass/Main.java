@@ -5,6 +5,8 @@ import java.util.Scanner;
 import edu.grupp4b.random.RandomStartnummer;
 import edu.grupp4b.skidakare.SkapaSkidakare;
 
+import edu.grupp4b.random.*;
+
 public class Main {
 
 	public static void main(String[] args) {
