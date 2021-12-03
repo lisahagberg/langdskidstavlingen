@@ -1,19 +1,21 @@
 package edu.grupp4b.skidakare;
 
+import edu.grupp4b.random.*;
+
 public class SkapaSkidakare {
 
 	 public static void Skapa() {
 
 		Skidakare[] skidakare = new Skidakare[5];
-
+		
 		for (int i = 0; i < skidakare.length; i++) {
+			RandomAkarnummer ra = new RandomAkarnummer();
 			skidakare[i] = new Skidakare();
 			skidakare[i].setFornamn("Inge ");
 			skidakare[i].setEfternamn("Glid" + i);
 			skidakare[i].setLand("Swe");
 			skidakare[i].setKlubb("Bollnäs IF");
-			skidakare[i].setAkarnummer((int) (i*2.75));
-
+			skidakare[i].setAkarnummer(ra.getAkarnummer());
 		}
 		System.out.println("5 skidåkare skapade");
 		for (int i = 0; i < skidakare.length; i++) {
