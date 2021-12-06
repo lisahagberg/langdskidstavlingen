@@ -2,6 +2,6 @@ package edu.grupp4b.anmalan;
 
 public class HamtaResultat {
 	
-	// skriv in sitt nr och få reda på vilken resultat man hamnade på
-	
+	// skriv in sitt nr och fï¿½ reda pï¿½ vilken resultat man hamnade pï¿½
+
 }

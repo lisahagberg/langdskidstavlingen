@@ -1,23 +1,19 @@
 package edu.grupp4b.skidakare;
 
-public class Skidakare {
+public class Skidakare extends Person{
 	
-	private String fornamn;
-	private String efternamn;
 	private String land;
 	private String klubb;
+	private int akarnummer;
+	private int startnummer;
 	
-	public String getFornamn() {
-		return fornamn;
-	}
-	public void setFornamn(String fornamn) {
-		this.fornamn = fornamn;
-	}
-	public String getEfternamn() {
-		return efternamn;
-	}
-	public void setEfternamn(String efternamn) {
-		this.efternamn = efternamn;
+	//Konstruktor
+	public Skidakare(String fornamn, String efternamn, String land, String klubb, int akarnummer, int startnummer) {
+		super(fornamn, efternamn);
+		this.land = land;
+		this.klubb = klubb;
+		this.akarnummer = akarnummer;
+		this.startnummer = startnummer;
 	}
 	public String getLand() {
 		return land;
@@ -31,10 +27,21 @@ public class Skidakare {
 	public void setKlubb(String klubb) {
 		this.klubb = klubb;
 	}
+	public int getAkarnummer() {
+		return akarnummer;
+	}
+	public void setAkarnummer(int akarnummer) {
+		this.akarnummer = akarnummer;
+	}
+	public int getStartnummer() {
+		return startnummer;
+	}
+	public void setStartnummer(int startnummer) {
+		this.startnummer = startnummer;
+	}
 	@Override
 	public String toString() {
-		return "Namn: " + fornamn + efternamn + ", Land: " + land + ", Klubb: " + klubb
-				+ "]";
+		return "Förnamn: " + getFornamn() + ", Efternamn: " + getEfternamn() + ", Land: " + land + ", Klubb: " + klubb + 
+				String.format(", Åkarnummer: %3d", akarnummer) + ", Startnummer: " + startnummer;
 	}
-	
 }
