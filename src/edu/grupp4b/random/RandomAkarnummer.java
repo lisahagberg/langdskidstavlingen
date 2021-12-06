@@ -14,9 +14,4 @@ public class RandomAkarnummer {
 	public int getAkarnummer() {
 		return akarnummer;
 	}
-
-	@Override
-	public String toString() {
-		return "Startnummer: " + akarnummer;
-	}
 }
