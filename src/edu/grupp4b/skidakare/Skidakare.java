@@ -41,7 +41,7 @@ public class Skidakare extends Person{
 	}
 	@Override
 	public String toString() {
-		return "Namn: " + getFornamn() + " " + getEfternamn() + ", Land: " + land + ", Klubb: " + klubb + 
-				String.format(", Åkarnummer: %3d", akarnummer) + ", Startnummer: " + startnummer;
+		return  "Startnummer: " + startnummer + ", Namn: " + getFornamn() + " " + getEfternamn() + ", Land: " + land + ", Klubb: " + klubb + 
+				String.format(", Åkarnummer: %3d", akarnummer);
 	}
 }
