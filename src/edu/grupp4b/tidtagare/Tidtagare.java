@@ -18,6 +18,7 @@ public class Tidtagare {
 		
 		String micro = String.format("%05.2f", centiseconds);
 		micro = micro.replace('.', ':');
+		micro = micro.replace(',', ':');
 		
 		System.out.println();
 		
