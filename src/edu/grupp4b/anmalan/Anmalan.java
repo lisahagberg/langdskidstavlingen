@@ -4,7 +4,7 @@ import java.util.Scanner;
 import edu.grupp4b.tavlingsform.*;
 public class Anmalan {
 
-	public void registrering() {
+	public static void registrering() {
 
 		Scanner scanner = new Scanner(System.in);
 
