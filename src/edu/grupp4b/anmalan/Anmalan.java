@@ -1,10 +1,12 @@
 package edu.grupp4b.anmalan;
-
+import edu.grupp4b.skidakare.*;
 import java.util.Scanner;
 import edu.grupp4b.tavlingsform.*;
 public class Anmalan {
 
-	public static void registrering() {
+	private IndividuellStart is;
+	
+	public void registrering() {
 
 		Scanner scanner = new Scanner(System.in);
 
@@ -40,5 +42,9 @@ public class Anmalan {
 			}
 			}	
 		}
+	}
+	public IndividuellStart getIs(IndividuellStart is) {
+		return is;
+		
 	}
 }

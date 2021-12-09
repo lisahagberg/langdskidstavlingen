@@ -14,6 +14,7 @@ public class Main {
 		Tidtagare tidtagare = new Tidtagare();
 		Anmalan.registrering();
 		SkapaSkidakare.Skapa();
+		SkapaSkidakare.startTid(Anmalan.getIs());
 		Scanner scanner = new Scanner(System.in);
 		boolean runMenu = true;
 		while(runMenu) {
