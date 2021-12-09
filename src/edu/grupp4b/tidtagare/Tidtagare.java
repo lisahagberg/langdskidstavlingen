@@ -2,9 +2,17 @@ package edu.grupp4b.tidtagare;
 
 public class Tidtagare {
 
-	private long start = System.nanoTime();    
+	private long start;   
 	private long tim;
 	private long min;
+
+	public Tidtagare() {
+		start = System.nanoTime();
+	}
+	
+	public Tidtagare(long extraTid) {
+		start = System.nanoTime() + (extraTid * 1000000000);
+	}
 
 	public void getTime() {
 		long passeradTid = System.nanoTime() - start;
@@ -25,5 +33,4 @@ public class Tidtagare {
 		System.out.format("Det tog %02d:%02d:", tim, min);
 		System.out.println(micro);
 	}
-
 }
