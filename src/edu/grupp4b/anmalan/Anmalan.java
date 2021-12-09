@@ -1,10 +1,12 @@
 package edu.grupp4b.anmalan;
-import edu.grupp4b.skidakare.*;
+
 import java.util.Scanner;
 import edu.grupp4b.tavlingsform.*;
 public class Anmalan {
 
-	private IndividuellStart is;
+	private IndividuellStart invStart;
+	private Jaktstart jStart;
+	private Jaktstart mstart;
 	
 	public void registrering() {
 
@@ -21,19 +23,19 @@ public class Anmalan {
 			case "1" -> {
 				System.out.println("[1] 15 sekunder\n[2] 30 sekunder");
 				System.out.print("Val: ");
-				IndividuellStart is = new IndividuellStart(scanner.nextInt());
+				invStart = new IndividuellStart(scanner.nextInt());
 				System.out.println("Tävling med Individuell start med " 
-				+ is.getAntalSekunder() + " sekunders mellanrum.");
+				+ invStart.getAntalSekunder() + " sekunders mellanrum.");
 				isRunning = false;
 			}
 			case "2" -> {
 				System.out.println("Tävling med Jaktstart."); 
-				//Jaktstart js = new Jaktstart();
+				//jStart = new Jaktstart();
 				isRunning = false;
 			}
 			case "3" -> {
 				System.out.println("Tävling med Masstart.");
-				//Masstart ms = new Masstart();
+				//mStart = new Masstart();
 				isRunning = false;
 			}
 			default -> {
@@ -43,8 +45,13 @@ public class Anmalan {
 			}	
 		}
 	}
-	public IndividuellStart getIs(IndividuellStart is) {
-		return is;
-		
+
+	public IndividuellStart getInvStart() {
+		return invStart;
 	}
+
+	public void setInvStart(IndividuellStart invStart) {
+		this.invStart = invStart;
+	}
+
 }

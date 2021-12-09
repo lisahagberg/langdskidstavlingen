@@ -11,10 +11,10 @@ public class Tidtagare {
 	}
 	
 	public Tidtagare(long extraTid) {
-		start = System.nanoTime() + (extraTid * 1000000000);
+		start = System.nanoTime() - (extraTid * 1000000000);
 	}
 
-	public void getTime() {
+	public String getTime() {
 		long passeradTid = System.nanoTime() - start;
 		double centiseconds = (passeradTid / 1000000);
 		centiseconds = centiseconds / 1000;
@@ -28,9 +28,7 @@ public class Tidtagare {
 		micro = micro.replace('.', ':');
 		micro = micro.replace(',', ':');
 		
-		System.out.println();
-		
-		System.out.format("Det tog %02d:%02d:", tim, min);
-		System.out.println(micro);
+		String tid = String.format("%02d:%02d:", tim, min) + micro;
+		return tid;
 	}
 }

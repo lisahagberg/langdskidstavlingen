@@ -12,9 +12,10 @@ public class Main {
 	public static void main(String[] args) {
 
 		Tidtagare tidtagare = new Tidtagare();
-		Anmalan.registrering();
-		SkapaSkidakare.Skapa();
-		SkapaSkidakare.startTid(Anmalan.getIs());
+		Anmalan a = new Anmalan();
+		a.registrering();
+		SkapaSkidakare.startTid(a.getInvStart());
+		//SkapaSkidakare.Skapa();
 		Scanner scanner = new Scanner(System.in);
 		boolean runMenu = true;
 		while(runMenu) {
