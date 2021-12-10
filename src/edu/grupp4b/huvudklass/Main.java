@@ -12,9 +12,12 @@ public class Main {
 	public static void main(String[] args) {
 
 		Tidtagare tidtagare = new Tidtagare();
-		Anmalan a = new Anmalan();
-		a.registrering();
-		SkapaSkidakare.startTid(a.getInvStart());
+		System.out.println("Tid sedan programmet startade: " + tidtagare.getTime());
+		Anmalan anmalan = new Anmalan();
+		anmalan.registrering();
+		SkapaSkidakare.startTid(anmalan.getInvStart());
+		System.out.println("\n5 skidåkare automatiskt skapade");
+		SkapaSkidakare.printSkidakare();
 		//SkapaSkidakare.Skapa();
 		Scanner scanner = new Scanner(System.in);
 		boolean runMenu = true;
@@ -27,7 +30,11 @@ public class Main {
 		System.out.print("Val: ");
 		
 	    switch(scanner.next()) {
-	    case "1" -> {}
+	    case "1" -> {
+	    	System.out.println("Tid sedan programmet startade: " + tidtagare.getTime());
+	
+	    	SkapaSkidakare.printSkidakare();
+	    	}
 	    case "2" -> {
 	    	for(int i = 0; i < SkapaSkidakare.skidakare.length; i++) {
 	    		if(SkapaSkidakare.skidakare[i].getStartnummer() == startnr) {
@@ -45,7 +52,6 @@ public class Main {
 	    	}
 	    }
 		}
-		tidtagare.getTime();
 		
 		scanner.close();
 	}	

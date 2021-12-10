@@ -31,4 +31,9 @@ public class Tidtagare {
 		String tid = String.format("%02d:%02d:", tim, min) + micro;
 		return tid;
 	}
+
+	@Override
+	public String toString() {
+		return "Tidtagare " + getTime();
+	}
 }

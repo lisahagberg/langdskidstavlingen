@@ -1,14 +1,17 @@
 package edu.grupp4b.skidakare;
 
+import edu.grupp4b.tidtagare.Tidtagare;
+
 public class Skidakare extends Person{
 	
 	private String land;
 	private String klubb;
 	private int startnummer;
-	String starttid;
+//	private String starttid;
+	private Tidtagare starttid;
 	
 	//Konstruktor
-	public Skidakare(String fornamn, String efternamn, String land, String klubb, int startnummer, String starttid) {
+	public Skidakare(String fornamn, String efternamn, String land, String klubb, int startnummer, Tidtagare starttid) {
 		super(fornamn, efternamn);
 		this.land = land;
 		this.klubb = klubb;
@@ -33,10 +36,16 @@ public class Skidakare extends Person{
 	public void setStartnummer(int startnummer) {
 		this.startnummer = startnummer;
 	}
-	public String getStartTid() {
+//	public String getStarttid() {
+//		return starttid;
+//	}
+//	public void setStarttid(String starttid) {
+//		this.starttid = starttid;
+//	}
+	public Tidtagare getStarttid() {
 		return starttid;
 	}
-	public void setStartTid(String starttid) {
+	public void setStarttid(Tidtagare starttid) {
 		this.starttid = starttid;
 	}
 	@Override

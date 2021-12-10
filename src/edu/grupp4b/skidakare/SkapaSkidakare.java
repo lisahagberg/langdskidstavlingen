@@ -5,7 +5,7 @@ import edu.grupp4b.tavlingsform.IndividuellStart;
 import edu.grupp4b.tidtagare.Tidtagare;
 
 public class SkapaSkidakare {
-	public static Tidtagare t;
+	public static Tidtagare tidtagare;
 	public static Skidakare[] skidakare = new Skidakare[5];
 	public static String time;
 
@@ -14,7 +14,8 @@ public class SkapaSkidakare {
 
 		for (int i = 0; i < skidakare.length; i++) {
 			// RandomAkarnummer ra = new RandomAkarnummer();
-			skidakare[i] = new Skidakare("Inge", "Glid " + i, "Swe", "Bollnäs IF", rs.getStartnummer(), getTime());
+			//skidakare[i] = new Skidakare("Inge", "Glid " + i, "Swe", "Bollnäs IF", rs.getStartnummer(), getTime());
+			skidakare[i] = new Skidakare("Inge", "Glid " + i, "Swe", "Bollnäs IF", rs.getStartnummer(), null);
 		}
 
 	}
@@ -25,14 +26,14 @@ public class SkapaSkidakare {
 
 		for (int i = 0; i < skidakare.length; i++) {
 			int revNumber = reverseOrder(skidakare[i].getStartnummer());
-			t = new Tidtagare((revNumber * sek) - sek);
-			skidakare[i].setStartTid(t.getTime());
+			tidtagare = new Tidtagare((revNumber * sek) - sek);
+			//skidakare[i].setStartTid(tidtagare.getTime());
+			skidakare[i].setStarttid(tidtagare);
 		}
-		printSkidakare();
+		//printSkidakare();
 	}
 
 	public static void printSkidakare() {
-		System.out.println("\n5 skidåkare skapade");
 		for (int i = 0; i < skidakare.length; i++) {
 			System.out.println(skidakare[i]);
 		}
@@ -47,14 +48,6 @@ public class SkapaSkidakare {
 		}
 		int reverseNumber = reverseArray[numberToReverse - 1];
 		return reverseNumber + 1;
-	}
-
-	public static String getTime() {
-		return time;
-	}
-
-	public static void setTime(String t) {
-		time = t;
 	}
 
 }
