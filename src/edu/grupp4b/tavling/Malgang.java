@@ -3,6 +3,7 @@ package edu.grupp4b.tavling;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.grupp4b.skidakare.SkapaSkidakare;
 import edu.grupp4b.skidakare.Skidakare;
 
 public class Malgang {
@@ -11,6 +12,7 @@ public class Malgang {
 	
 	public static void registreraMal(Skidakare skidakare) {
 		malLista.add(skidakare);
+		SkapaSkidakare.skidakare.remove(skidakare);
 	}
 	
 	public static void seMal() {
