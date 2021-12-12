@@ -13,7 +13,9 @@ public class Anmalan {
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.println("Hello, vänligen välj en tävling");
-		System.out.println("[1] Inviduell start\n[2] Masstart\n[3] Jaktstart");
+		System.out.print("[1] Inviduell start");
+		System.err.println("\n[2] Masstart\n[3] Jaktstart");
+		
 		System.out.print("Val: ");
 		String val = scanner.next();
 		boolean isRunning = true;

@@ -34,6 +34,6 @@ public class Tidtagare {
 
 	@Override
 	public String toString() {
-		return "Tidtagare " + getTime();
+		return getTime();
 	}
 }
