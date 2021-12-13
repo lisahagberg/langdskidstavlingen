@@ -11,7 +11,7 @@ public class Skidakare extends Person{
 	private Tidtagare tid;
 	
 	//Konstruktor
-	public Skidakare(String fornamn, String efternamn, String land, String klubb, int startnummer, Tidtagare tid) {
+	public Skidakare(int startnummer, String fornamn, String efternamn, String land, String klubb, Tidtagare tid) {
 		super(fornamn, efternamn);
 		this.land = land;
 		this.klubb = klubb;
