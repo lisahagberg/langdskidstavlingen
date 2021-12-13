@@ -23,7 +23,7 @@ public class AnropaPersoner {
 	
 	System.out.println();
 	
-	
+
 	}
 	
 }
