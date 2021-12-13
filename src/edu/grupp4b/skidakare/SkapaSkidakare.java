@@ -12,9 +12,9 @@ public class SkapaSkidakare {
 		Skidakare[] skidakare = new Skidakare[5];
 		for (int i = 0; i < skidakare.length; i++) {
 			RandomAkarnummer ra = new RandomAkarnummer();		
-			skidakare[i] = new Skidakare("Inge", "Glid" + i, "Swe", "Bollnäs IF", ra.getAkarnummer(), rs.getStartnummer());
+			skidakare[i] = new Skidakare("Inge", "Glid " + i, "Swe", "Bollnäs IF", ra.getAkarnummer(), rs.getStartnummer());
 		}
-		System.out.println("5 skidåkare skapade");
+		System.out.println("\n5 skidåkare skapade");
 		for (int i = 0; i < skidakare.length; i++) {
 			System.out.println(skidakare[i]);
 		}
