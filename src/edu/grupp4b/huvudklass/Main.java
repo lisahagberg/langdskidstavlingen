@@ -19,6 +19,10 @@ public class Main {
 		System.out.println("\n5 skidåkare automatiskt skapade");
 		SkapaSkidakare.printSkidakare();
 		// SkapaSkidakare.Skapa();
+		
+		//Skapar object av målgång
+		Malgang mal = new Malgang();
+		
 		Scanner scanner = new Scanner(System.in);
 		boolean runMenu = true;
 		while (runMenu) {
@@ -39,18 +43,16 @@ public class Main {
 //	    	for(int i = 0; i < SkapaSkidakare.skidakare.length; i++) {
 //	    		if(SkapaSkidakare.skidakare[i].getStartnummer() == startnr) {
 //	    			Malgang.registreraMal(SkapaSkidakare.skidakare[i]);
-
+				
 				for (int i = 0; i < SkapaSkidakare.skidakare.size(); i++) {
 					if (SkapaSkidakare.skidakare.get(i).getStartnummer() == startnr) {
-						Malgang.registreraMal(SkapaSkidakare.skidakare.get(i));
+						mal.registreraMal(SkapaSkidakare.skidakare.get(i));
 
 					}
-
 				}
-
 			}
 			case "3" -> {
-				Malgang.seMal();
+				mal.seMal();
 			}
 			case "4" -> {
 				System.out.println("Avslutar program");
