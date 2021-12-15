@@ -12,7 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		Tidtagare tidtagare = new Tidtagare();
-		System.out.println("Tid sedan programmet startade: " + tidtagare.getTime());
+		System.out.println("Tid sedan programmet startade: " + tidtagare);
 		Anmalan anmalan = new Anmalan();
 		anmalan.registrering();
 		SkapaSkidakare.startTid(anmalan.getInvStart());
@@ -32,7 +32,7 @@ public class Main {
 
 			switch (scanner.next()) {
 			case "1" -> {
-				System.out.println("Tid sedan programmet startade: " + tidtagare.getTime());
+				System.out.println("Tid sedan programmet startade: " + tidtagare);
 
 				SkapaSkidakare.printSkidakare();
 			}
