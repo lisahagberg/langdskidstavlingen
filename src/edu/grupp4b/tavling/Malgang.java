@@ -1,6 +1,7 @@
 package edu.grupp4b.tavling;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import edu.grupp4b.skidakare.SkapaSkidakare;
@@ -14,10 +15,14 @@ public class Malgang {
 		malLista.add(skidakare);
 		skidakare.setFinalTid(skidakare.getTid().toString());
 		SkapaSkidakare.skidakare.remove(skidakare);
+		skidakare.compareTid();
 	}
 	
 	public void seMal() {
 		int placering = 1;
+		
+		Collections.sort(malLista);
+		
 		for(Skidakare skidakareLista : malLista) {
 			System.out.println(skidakareLista.getFornamn() + " " + skidakareLista.getEfternamn() 
 			+ " med startnummer " + skidakareLista.getStartnummer() + " gick i mål med tiden: " + skidakareLista.getFinalTid() 

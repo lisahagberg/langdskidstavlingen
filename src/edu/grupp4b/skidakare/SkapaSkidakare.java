@@ -20,7 +20,7 @@ public class SkapaSkidakare {
 		//for (int i = 0; i < skidakare.length; i++) {
 		for (int i = 0; i < 5; i++) {
 			//skidakare[i] = new Skidakare("Inge", "Glid " + i, "Swe", "Bollnäs IF", rs.getStartnummer(), null);
-			skidakare.add(new Skidakare(rs.getStartnummer(), "Inge", "Glid " + i, "Swe", "Bollnäs IF", null));
+			skidakare.add(new Skidakare(rs.getStartnummer(), "Inge", "Glid " + i, "Swe", "Bollnäs IF"));
 		}
 
 	}
