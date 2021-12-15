@@ -12,14 +12,15 @@ public class Malgang {
 	
 	public void registreraMal(Skidakare skidakare) {
 		malLista.add(skidakare);
+		skidakare.setFinalTid(skidakare.getTid().toString());
 		SkapaSkidakare.skidakare.remove(skidakare);
 	}
 	
 	public void seMal() {
 		int placering = 1;
-		for(Skidakare lista : malLista) {
-			System.out.println(lista.getFornamn() + " " + lista.getEfternamn() 
-			+ " med startnummer " + lista.getStartnummer() + " gick i mål med tiden: " + lista.getTid() 
+		for(Skidakare skidakareLista : malLista) {
+			System.out.println(skidakareLista.getFornamn() + " " + skidakareLista.getEfternamn() 
+			+ " med startnummer " + skidakareLista.getStartnummer() + " gick i mål med tiden: " + skidakareLista.getFinalTid() 
 			+ " hamnade på " + placering + stringPlacering(placering) + " plats.");
 			placering++;
 		}

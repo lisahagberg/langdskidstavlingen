@@ -9,6 +9,7 @@ public class Skidakare extends Person{
 	private int startnummer;
 //	private String tid;
 	private Tidtagare tid;
+	private String finalTid;
 	
 	//Konstruktor
 	public Skidakare(int startnummer, String fornamn, String efternamn, String land, String klubb, Tidtagare tid) {
@@ -47,6 +48,13 @@ public class Skidakare extends Person{
 	}
 	public void setTid(Tidtagare tid) {
 		this.tid = tid;
+	}
+	
+	public String getFinalTid() {
+		return finalTid;
+	}
+	public void setFinalTid(String finalTid) {
+		this.finalTid = getTid().toString();
 	}
 	@Override
 	public String toString() {
