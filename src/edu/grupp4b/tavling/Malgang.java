@@ -11,6 +11,8 @@ public class Malgang {
 	
 	List<Skidakare> malLista = new ArrayList<>();
 	
+	//Registrerar skidåkare i ny lista som har gått i mål
+	//Tar bort skidåkare från första lista som "åker just nu"
 	public void registreraMal(Skidakare skidakare) {
 		malLista.add(skidakare);
 		skidakare.setFinalTid(skidakare.getTid().toString());
@@ -18,9 +20,11 @@ public class Malgang {
 		skidakare.compareTid();
 	}
 	
+	//Skriver ut målgångslista med diverse egenskaper samt placering
 	public void seMal() {
 		int placering = 1;
 		
+		//Sorterar lista beroende på snabbast tid
 		Collections.sort(malLista);
 		
 		for(Skidakare skidakareLista : malLista) {
