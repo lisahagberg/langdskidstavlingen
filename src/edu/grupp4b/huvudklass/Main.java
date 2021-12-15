@@ -26,9 +26,6 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		boolean runMenu = true;
 		while (runMenu) {
-			System.out.println("\nAnge startnummer för åkare du vill kontrollera:");
-			System.out.print("Val: ");
-			int startnr = scanner.nextInt();
 			System.out.println("\n[1] Se skidåkarnas tider\n[2] Registrera målgång\n"
 					+ "[3] Se lista över målgång\n[4] System exit");
 			System.out.print("Val: ");
@@ -43,6 +40,9 @@ public class Main {
 //	    	for(int i = 0; i < SkapaSkidakare.skidakare.length; i++) {
 //	    		if(SkapaSkidakare.skidakare[i].getStartnummer() == startnr) {
 //	    			Malgang.registreraMal(SkapaSkidakare.skidakare[i]);
+				System.out.println("\nAnge startnummer för åkare du vill kontrollera:");
+				System.out.print("Val: ");
+				int startnr = scanner.nextInt();
 				
 				for (int i = 0; i < SkapaSkidakare.skidakare.size(); i++) {
 					if (SkapaSkidakare.skidakare.get(i).getStartnummer() == startnr) {
