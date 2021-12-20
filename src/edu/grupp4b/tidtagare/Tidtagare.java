@@ -3,7 +3,6 @@ package edu.grupp4b.tidtagare;
 public class Tidtagare {
 
 	private long start;
-	private long end;
 	private long tim;
 	private long min;
 	private double milli;
@@ -15,25 +14,16 @@ public class Tidtagare {
 	public Tidtagare(long extraTid) {
 		start = System.nanoTime() - (extraTid * 1000000000);
 	}
-
+	
 	public long getStart() {
 		return start;
 	}
-
-//	public long getEnd() {
-//		return end;
-//	}
-//
-//	public void setEnd(long end) {
-//		this.end = end;
-//	}
-
+	
 	public long getTim() {
 		long passeradTid = System.nanoTime() - getStart();
 		tim = passeradTid / 3600000000000L;
 		return tim;
 	}
-
 
 	public long getMin() {
 		long passeradTid = System.nanoTime() - getStart();
@@ -53,13 +43,6 @@ public class Tidtagare {
 			milli = milli % 60;
 		}
 		return milli;
-	}
-
-	//Högst nanoTid = snabbast = vinner?
-	public int compareTime() {
-		end = (System.nanoTime() - getStart());
-		
-		return (int) end / 10000;
 	}
 
 	@Override
