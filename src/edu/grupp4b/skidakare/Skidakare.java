@@ -54,8 +54,9 @@ public class Skidakare extends Person implements Comparable<Skidakare>{
 	}
 	@Override
 	public String toString() {
-		return  "Startnummer: " + startnummer + ", Namn: " + getFornamn() + " " + getEfternamn() + ", Land: " + land
-				+ ", Klubb: " + klubb + ", tid: " + tid;
+		return  "Startnummer: " + startnummer + ", Namn: " + getFornamn() + " "
+		+ getEfternamn() + ", Land: " + land + ", Klubb: " 
+				+ klubb + ", tid: " + tid;
 	}
 	@Override
 	public int compareTo(Skidakare annan) {

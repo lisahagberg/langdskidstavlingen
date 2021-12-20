@@ -18,7 +18,7 @@ public class SkapaSkidakare {
 		RandomStartnummer rs = new RandomStartnummer();
 
 		for (int i = 0; i < 5; i++) {
-			skidakare.add(new Skidakare(rs.getStartnummer(), "Inge", "Glid ", "Swe", "Bollnäs IF"));
+			skidakare.add(new Skidakare(rs.getStartnummer(), "Inge", "Glid", "Swe", "Bollnäs IF"));
 		}
 
 	}
