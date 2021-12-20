@@ -34,7 +34,7 @@ public class Malgang {
 			placering++;
 		}
 	}
-	private String stringPlacering(int platsNummer) {
+	String stringPlacering(int platsNummer) {
 		if(platsNummer == 1 || platsNummer == 2) {
 			return ":a";
 		}
