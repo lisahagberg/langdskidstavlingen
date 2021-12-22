@@ -10,6 +10,13 @@ public class Skidakare extends Person implements Comparable<Skidakare>{
 	private Tidtagare tid;
 	private String finalTid;
 	
+	// konstruktor (överlagrad) till Registrators klassen
+	public Skidakare(String fornamn, String efternamn, String land, String klubb) {
+		super(fornamn, efternamn);
+		this.land = land;
+		this.klubb = klubb;
+	}
+	
 	//Konstruktor
 	public Skidakare(int startnummer, String fornamn, String efternamn, String land, String klubb) {
 		super(fornamn, efternamn);
