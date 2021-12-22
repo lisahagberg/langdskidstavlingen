@@ -9,7 +9,7 @@ import edu.grupp4b.tidtagare.Tidtagare;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		Tidtagare tidtagare = new Tidtagare();
 		System.out.println("Tid sedan programmet startade: " + tidtagare);
