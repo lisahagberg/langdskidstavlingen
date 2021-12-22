@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import edu.grupp4b.random.RandomStartnummer;
 import edu.grupp4b.skidakare.Skidakare;
 
 public class Registrering {
@@ -12,11 +13,12 @@ public class Registrering {
 
 		Scanner scan = new Scanner(System.in);
 		var akare = new ArrayList<Skidakare>();
-		System.out.println("Hur många åkare vill du registrera?: ");
+		RandomStartnummer rs = new RandomStartnummer();
+		System.out.println("Hur mï¿½nga ï¿½kare vill du registrera?: ");
 		int hej = scan.nextInt();
 		for (int p = 0; p < hej; p++) {
-			System.out.println("Fyll i följande: Förnamn, Efternamn, Land och Klubb: ");
-			akare.add(new Skidakare(scan.next(), scan.next(), scan.next(), scan.next()));
+			System.out.println("Fyll i fï¿½ljande: Fï¿½rnamn, Efternamn, Land och Klubb: ");
+			akare.add(new Skidakare(rs.getStartnummer(), scan.next(), scan.next(), scan.next(), scan.next()));
 
 		}
 		for (int i = 0; i < akare.size(); i++) {

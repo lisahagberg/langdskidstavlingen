@@ -27,21 +27,15 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		boolean runMenu = true;
 		while (runMenu) {
-			System.out.println("\n[0] Registrera skid�kare\n[1] Se skidåkarnas tider\n[2] Registrera målgång\n"
+			System.out.println("\n[0] Registrera skidåkare\n[1] Se skidåkarnas tider\n[2] Registrera målgång\n"
 					+ "[3] Se lista över målgång\n[4] System exit");
 			System.out.print("Val: ");
 
 			switch (scanner.next()) {
-			case "0" -> {
-				System.out.println("Registrera skid�kare: ");
-				Registrering.registrator();
-				
-			}
 			case "1" -> {
 				System.out.println("Tid sedan programmet startade: " + tidtagare);
 
 				SkapaSkidakare.printSkidakare();
-				
 			}
 			case "2" -> {
 				System.out.println("\nAnge startnummer för åkare du vill kontrollera:");
@@ -81,7 +75,6 @@ public class Main {
 			}
 			}
 		}
-
 		scanner.close();
 	}
 }
