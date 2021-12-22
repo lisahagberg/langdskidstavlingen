@@ -2,6 +2,8 @@ package edu.grupp4b.skidakare;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import edu.grupp4b.random.*;
@@ -35,10 +37,26 @@ public class SkapaSkidakare {
 		}
 	}
 
-	//Skriver ut skidåkare som åker just nu
+	
+	
+	static final Comparator<Skidakare> VIA_STARTNUMMER =
+			  new Comparator<Skidakare>() {
+
+				@Override
+				public int compare(Skidakare skid1, Skidakare skid2) {
+					if(skid1.getStartnummer() > skid2.getStartnummer()) {
+						return 1;
+					} else {
+						return -1;
+					}
+				}
+			  };
+			  
 	public static void printSkidakare() {
-		for (int i = 0; i < skidakare.size(); i++) {
-			System.out.println(skidakare.get(i));
+		Collections.sort(skidakare, VIA_STARTNUMMER);
+		
+		for(Skidakare skid : skidakare) {
+			System.out.println(skid);
 		}
 	}
 
