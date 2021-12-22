@@ -15,7 +15,6 @@ public class Anmalan {
 		System.out.println("Hello, vänligen välj en tävling");
 		System.out.print("[1] Inviduell start");
 		Thread.sleep(100);
-		System.out.println("[1] Inviduell start");
 		System.err.println("\n[2] Masstart\n[3] Jaktstart");
 		Thread.sleep(100);
 		System.out.print("Val: ");
