@@ -19,10 +19,10 @@ public class Main {
 		System.out.println("\n5 skidåkare automatiskt skapade");
 		SkapaSkidakare.printSkidakare();
 		// SkapaSkidakare.Skapa();
-		
-		//Skapar object av målgång
+
+		// Skapar object av målgång
 		Malgang mal = new Malgang();
-		
+
 		Scanner scanner = new Scanner(System.in);
 		boolean runMenu = true;
 		while (runMenu) {
@@ -37,26 +37,40 @@ public class Main {
 				SkapaSkidakare.printSkidakare();
 			}
 			case "2" -> {
-//	    	for(int i = 0; i < SkapaSkidakare.skidakare.length; i++) {
-//	    		if(SkapaSkidakare.skidakare[i].getStartnummer() == startnr) {
-//	    			Malgang.registreraMal(SkapaSkidakare.skidakare[i]);
 				System.out.println("\nAnge startnummer för åkare du vill kontrollera:");
 				System.out.print("Val: ");
+				boolean isFound = false;
+				try {
 				int startnr = scanner.nextInt();
-				
-				for (int i = 0; i < SkapaSkidakare.skidakare.size(); i++) {
-					if (SkapaSkidakare.skidakare.get(i).getStartnummer() == startnr) {
-						mal.registreraMal(SkapaSkidakare.skidakare.get(i));
-
-					}
+					
+						for (int i = 0; i < SkapaSkidakare.skidakare.size(); i++) {
+							if (SkapaSkidakare.skidakare.get(i).getStartnummer() == startnr) {
+								mal.registreraMal(SkapaSkidakare.skidakare.get(i));
+								System.out.println("Målgång regisrerad för Skidåkare med "
+										+ "startnummer " + startnr);
+								isFound = true;
+								break;
+							}
+						}
+				}catch (Exception ex){
+					scanner.nextLine();
+					System.out.println("Felaktig inmatning");
 				}
-			}
+				if(!isFound) {
+					System.out.println("Skidåkare finns tyvärr inte eller"
+							+ "\när redan i mål");						
+				}
+				}
 			case "3" -> {
 				mal.seMal();
 			}
 			case "4" -> {
 				System.out.println("Avslutar program");
 				System.exit(0);
+			}
+			default -> {
+
+				System.out.println("Felaktig inmatning");
 			}
 			}
 		}

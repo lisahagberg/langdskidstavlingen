@@ -6,8 +6,6 @@ import edu.grupp4b.tavlingsform.*;
 public class Anmalan {
 
 	private IndividuellStart invStart;
-	private Jaktstart jStart;
-	private Jaktstart mstart;
 
 	public void registrering() throws InterruptedException {
 
@@ -17,9 +15,7 @@ public class Anmalan {
 		System.out.print("[1] Inviduell start");
 		Thread.sleep(100);
 		System.err.println("\n[2] Masstart\n[3] Jaktstart");
-
 		Thread.sleep(100);
-
 		System.out.print("Val: ");
 		String val = scanner.next();
 		boolean isRunning = true;
