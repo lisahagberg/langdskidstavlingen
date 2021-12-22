@@ -9,15 +9,19 @@ public class Anmalan {
 	private Jaktstart jStart;
 	private Jaktstart mstart;
 
-	public void registrering() {
+	public void registrering() throws InterruptedException {
 
 		Scanner scanner = new Scanner(System.in);
-
+		//Använder sleep för att sortering med System.out och System.err hamnar i korrekt ordning
 		System.out.println("Hello, vänligen välj en tävling");
-		System.out.println("[1] Inviduell start");
+		System.out.print("[1] Inviduell start");
+		Thread.sleep(100);
 		System.err.println("\n[2] Masstart\n[3] Jaktstart");
 
+		Thread.sleep(100);
+
 		System.out.print("Val: ");
+		Thread.sleep(100);
 		String val = scanner.next();
 		boolean isRunning = true;
 
@@ -30,7 +34,6 @@ public class Anmalan {
 				while (!"1".equals(sek) && !"2".equals(sek)) {
 					System.err.println("felaktig inmatning, försök igen: ");
 					sek = scanner.next();
-
 				}
 
 				int intSek = Integer.parseInt(sek);
@@ -41,17 +44,19 @@ public class Anmalan {
 				isRunning = false;
 			}
 			case "2" -> {
-				System.out.println("Tävling med Jaktstart.");
-				// jStart = new Jaktstart();
-				isRunning = false;
+				System.out.println("Tävling med Jaktstart är under tyvärr uppbyggnad");
+				System.out.print("Försök igen med ett annat alternativ: ");
+				val = scanner.next();
+				//jStart = new Jaktstart();
 			}
 			case "3" -> {
-				System.out.println("Tävling med Masstart.");
-				// mStart = new Masstart();
-				isRunning = false;
+				System.out.println("Tävling med Masstart är under tyvärr uppbyggnad");
+				System.out.print("Försök igen med ett annat alternativ: ");
+				val = scanner.next();
+        //mStart = new Masstart();
 			}
 			default -> {
-				System.err.print("felaktig inmatning, försök igen: ");
+				System.out.print("Felaktig inmatning, försök igen: ");
 				val = scanner.next();
 			}
 			}
@@ -61,9 +66,7 @@ public class Anmalan {
 	public IndividuellStart getInvStart() {
 		return invStart;
 	}
-
 	public void setInvStart(IndividuellStart invStart) {
 		this.invStart = invStart;
 	}
-
 }
