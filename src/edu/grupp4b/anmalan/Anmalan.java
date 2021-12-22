@@ -2,12 +2,13 @@ package edu.grupp4b.anmalan;
 
 import java.util.Scanner;
 import edu.grupp4b.tavlingsform.*;
+
 public class Anmalan {
 
 	private IndividuellStart invStart;
 	private Jaktstart jStart;
 	private Jaktstart mstart;
-	
+
 	public void registrering() throws InterruptedException {
 
 		Scanner scanner = new Scanner(System.in);
@@ -16,20 +17,30 @@ public class Anmalan {
 		System.out.print("[1] Inviduell start");
 		Thread.sleep(100);
 		System.err.println("\n[2] Masstart\n[3] Jaktstart");
+
 		Thread.sleep(100);
+
 		System.out.print("Val: ");
 		Thread.sleep(100);
 		String val = scanner.next();
 		boolean isRunning = true;
-		
-		while(isRunning) {
-			switch(val) {
+
+		while (isRunning) {
+			switch (val) {
 			case "1" -> {
 				System.out.println("[1] 15 sekunder\n[2] 30 sekunder");
 				System.out.print("Val: ");
-				invStart = new IndividuellStart(scanner.nextInt());
-				System.out.println("Tävling med Individuell start med " 
-				+ invStart.getAntalSekunder() + " sekunders mellanrum.");
+				String sek = scanner.next();
+				while (!"1".equals(sek) && !"2".equals(sek)) {
+					System.err.println("felaktig inmatning, försök igen: ");
+					sek = scanner.next();
+				}
+
+				int intSek = Integer.parseInt(sek);
+
+				invStart = new IndividuellStart(intSek);
+				System.out.println(
+						"Tävling med Individuell start med " + invStart.getAntalSekunder() + " sekunders mellanrum.");
 				isRunning = false;
 			}
 			case "2" -> {
@@ -40,15 +51,15 @@ public class Anmalan {
 			}
 			case "3" -> {
 				System.out.println("Tävling med Masstart är under tyvärr uppbyggnad");
-				//mStart = new Masstart();
 				System.out.print("Försök igen med ett annat alternativ: ");
 				val = scanner.next();
+        //mStart = new Masstart();
 			}
 			default -> {
 				System.out.print("Felaktig inmatning, försök igen: ");
 				val = scanner.next();
 			}
-			}	
+			}
 		}
 	}
 
