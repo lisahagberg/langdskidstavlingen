@@ -3,6 +3,7 @@ package edu.grupp4b.huvudklass;
 import java.util.Scanner;
 
 import edu.grupp4b.anmalan.Anmalan;
+import edu.grupp4b.anmalan.Registrering;
 import edu.grupp4b.skidakare.SkapaSkidakare;
 import edu.grupp4b.tavling.Malgang;
 import edu.grupp4b.tidtagare.Tidtagare;
@@ -26,15 +27,21 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		boolean runMenu = true;
 		while (runMenu) {
-			System.out.println("\n[1] Se skidåkarnas tider\n[2] Registrera målgång\n"
+			System.out.println("\n[0] Registrera skid�kare\n[1] Se skidåkarnas tider\n[2] Registrera målgång\n"
 					+ "[3] Se lista över målgång\n[4] System exit");
 			System.out.print("Val: ");
 
 			switch (scanner.next()) {
+			case "0" -> {
+				System.out.println("Registrera skid�kare: ");
+				Registrering.registrator();
+				
+			}
 			case "1" -> {
 				System.out.println("Tid sedan programmet startade: " + tidtagare);
 
 				SkapaSkidakare.printSkidakare();
+				
 			}
 			case "2" -> {
 //	    	for(int i = 0; i < SkapaSkidakare.skidakare.length; i++) {

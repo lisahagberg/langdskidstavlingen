@@ -22,7 +22,6 @@ public class SkapaSkidakare {
 		for (int i = 0; i < 5; i++) {
 			skidakare.add(new Skidakare(rs.getStartnummer(), "Inge", "Glid", "Swe", "Bollnäs IF"));
 		}
-
 	}
 
 	//Hämtar antal sekunder från från objektet IndividuellStart
