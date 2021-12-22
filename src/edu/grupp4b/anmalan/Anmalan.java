@@ -27,7 +27,7 @@ public class Anmalan {
 				System.out.print("Val: ");
 				String sek = scanner.next();
 				while (!"1".equals(sek) && !"2".equals(sek)) {
-					System.err.println("felaktig inmatning, försök igen: ");
+					System.err.println("Felaktig inmatning, försök igen: ");
 					sek = scanner.next();
 				}
 
@@ -39,16 +39,16 @@ public class Anmalan {
 				isRunning = false;
 			}
 			case "2" -> {
-				System.out.println("Tävling med Jaktstart är under tyvärr uppbyggnad");
+				System.out.println("Tävling med Jaktstart är tyvärr under uppbyggnad");
 				System.out.print("Försök igen med ett annat alternativ: ");
 				val = scanner.next();
 				//jStart = new Jaktstart();
 			}
 			case "3" -> {
-				System.out.println("Tävling med Masstart är under tyvärr uppbyggnad");
+				System.out.println("Tävling med Masstart är tyvärr under uppbyggnad");
 				System.out.print("Försök igen med ett annat alternativ: ");
 				val = scanner.next();
-        //mStart = new Masstart();
+				//mStart = new Masstart();
 			}
 			default -> {
 				System.out.print("Felaktig inmatning, försök igen: ");
