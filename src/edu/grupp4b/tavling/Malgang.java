@@ -26,13 +26,18 @@ public class Malgang {
 		
 		//Sorterar lista beroende på snabbast tid
 		Collections.sort(malLista);
+		if (malLista.isEmpty()) {
+			System.out.println("Ingen målgång är för tillfället registrerad.");
+		}
 		
+	else 
 		for(Skidakare skidakareLista : malLista) {
 			System.out.println(skidakareLista.getFornamn() + " " + skidakareLista.getEfternamn() 
 			+ " med startnummer " + skidakareLista.getStartnummer() + " gick i mål med tiden: " + skidakareLista.getFinalTid() 
 			+ " hamnade på " + placering + stringPlacering(placering) + " plats.");
 			placering++;
 		}
+	
 	}
 	String stringPlacering(int platsNummer) {
 		if(platsNummer == 1 || platsNummer == 2) {
