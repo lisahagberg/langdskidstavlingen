@@ -34,7 +34,7 @@ public class StartaTavling {
 			case "2" -> {
 				System.out.println("\nAnge startnummer för åkare du vill kontrollera:");
 				System.out.print("Val: ");
-				boolean isFound = false;
+				boolean finnsSkidakare = false;
 				try {
 					int startnr = scanner.nextInt();
 
@@ -43,7 +43,7 @@ public class StartaTavling {
 							mal.registreraMal(reg.getSkidakareLista().get(i));
 							System.out.println("Målgång registrerad för Skidåkare med " + "startnummer " + startnr);
 							reg.getSkidakareLista().remove(reg.getSkidakareLista().get(i));
-							isFound = true;
+							finnsSkidakare = true;
 							break;
 						}
 					}
@@ -52,7 +52,7 @@ public class StartaTavling {
 					scanner.nextLine();
 					System.out.println("Felaktig inmatning");
 				}
-				if (!isFound) {
+				if (!finnsSkidakare) {
 					System.out.println("Skidåkare finns tyvärr inte eller" + "\när redan i mål");
 				}
 			}
