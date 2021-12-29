@@ -1,33 +1,32 @@
-package edu.grupp4b.huvudklass;
+package edu.grupp4b.tavling;
 
 import java.util.Scanner;
 
 import edu.grupp4b.anmalan.Anmalan;
 import edu.grupp4b.anmalan.Registrering;
 import edu.grupp4b.skidakare.SkapaSkidakare;
-import edu.grupp4b.tavling.Malgang;
 import edu.grupp4b.tidtagare.Tidtagare;
 
-public class Main {
+public class StartaTavling {
 
 	public static void main(String[] args) throws InterruptedException {
-
 		Tidtagare tidtagare = new Tidtagare();
-		System.out.println("Tid sedan programmet startade: " + tidtagare);
+		//System.out.println("Tid sedan programmet startade: " + tidtagare);
 		Anmalan anmalan = new Anmalan();
 		anmalan.registrering();
 		SkapaSkidakare.startTid(anmalan.getInvStart());
 		System.out.println("\n5 skidåkare automatiskt skapade");
 		SkapaSkidakare.printSkidakare();
 		// SkapaSkidakare.Skapa();
-
+//		Registrering reg = new Registrering();
+//		reg.registrator();
 		// Skapar object av målgång
 		Malgang mal = new Malgang();
 
 		Scanner scanner = new Scanner(System.in);
 		boolean runMenu = true;
 		while (runMenu) {
-			System.out.println("\n[0] Registrera skidåkare\n[1] Se skidåkarnas tider\n[2] Registrera målgång\n"
+			System.out.println("\n[1] Se skidåkarnas tider\n[2] Registrera målgång\n"
 					+ "[3] Se lista över målgång\n[4] System exit");
 			System.out.print("Val: ");
 
@@ -76,5 +75,7 @@ public class Main {
 			}
 		}
 		scanner.close();
+
 	}
+
 }
