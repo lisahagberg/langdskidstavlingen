@@ -22,7 +22,6 @@ public class RandomStartnummer {
 		for(int i = 1; i <= listaStorlek; i++) {
 			startnummerLista.add(i);
 		}
-		System.out.println("TEST: Storlek på SkidakarLista: " + startnummerLista.size());
 	}
 
 	public void setMySize(int mySize) {

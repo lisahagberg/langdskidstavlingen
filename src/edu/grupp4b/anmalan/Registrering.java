@@ -51,14 +51,16 @@ public class Registrering {
 		int antalSkidakare = scan.nextInt();
 		RandomStartnummer rs = new RandomStartnummer(antalSkidakare + getExtraSkidakare()); // Lägger till extra
 																							// skidåkare
-		System.out.println("TEST: Antal Skidåkare att registrera manuellt" + antalSkidakare);
+
 		for (int i = 0; i < antalSkidakare; i++) {
 			System.out.println("Fyll i följande: Förnamn, Efternamn, Land och Klubb: ");
-			skidakareLista.add(new Skidakare(rs.getStartnummer(), scan.next(), scan.next(), scan.next(), scan.next()));
+			skidakareLista.add(new Skidakare(rs.getStartnummer(), scan.nextLine(), 
+					scan.nextLine(), scan.nextLine(), scan.nextLine()));
 		}
 		for (int i = 0; i < getExtraSkidakare(); i++) {
 			registreraExtraSkidakare(rs);
 		}
+		System.out.println(antalSkidakare + " skidåkare registrerade plus " + getExtraSkidakare() + " extra skidåkare");
 	}
 
 	public void registreraExtraSkidakare(RandomStartnummer rs) {
