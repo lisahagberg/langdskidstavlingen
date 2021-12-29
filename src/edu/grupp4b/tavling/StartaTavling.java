@@ -44,15 +44,29 @@ public class StartaTavling {
 				try {
 				int startnr = scanner.nextInt();
 					
-						for (int i = 0; i < SkapaSkidakare.skidakare.size(); i++) {
-							if (SkapaSkidakare.skidakare.get(i).getStartnummer() == startnr) {
-								mal.registreraMal(SkapaSkidakare.skidakare.get(i));
-								System.out.println("Målgång regisrerad för Skidåkare med "
-										+ "startnummer " + startnr);
-								isFound = true;
-								break;
-							}
-						}
+//						for (int i = 0; i < SkapaSkidakare.skidakare.size(); i++) {
+//							if (SkapaSkidakare.skidakare.get(i).getStartnummer() == startnr) {
+//								mal.registreraMal(SkapaSkidakare.skidakare.get(i));
+//								System.out.println("Målgång regisrerad för Skidåkare med "
+//										+ "startnummer " + startnr);
+//								isFound = true;
+//								break;
+//							}
+//						}
+				
+				for (int i = 0; i < reg.getSkidakareLista().size(); i++) {
+				if (reg.getSkidakareLista().get(i).getStartnummer() == startnr) {
+					mal.registreraMal(reg.getSkidakareLista().get(i));
+					System.out.println("Målgång regisrerad för Skidåkare med "
+							+ "startnummer " + startnr);
+					reg.getSkidakareLista().remove(reg.getSkidakareLista().get(i));
+					isFound = true;
+					break;
+				}
+			}
+
+				
+				
 				}catch (Exception ex){
 					scanner.nextLine();
 					System.out.println("Felaktig inmatning");
