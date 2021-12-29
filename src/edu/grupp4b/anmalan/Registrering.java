@@ -13,33 +13,28 @@ import edu.grupp4b.tavlingsform.IndividuellStart;
 import edu.grupp4b.tidtagare.Tidtagare;
 
 public class Registrering {
-	
+
 	private List<Skidakare> skidakareLista;
 	private Tidtagare tidtagare;
 	private int extraSkidakare;
-	
-	public Registrering(){
+
+	public Registrering() {
 		skidakareLista = new ArrayList<>();
 		setExtraSkidakare(5);
 	}
-
 
 	public void setExtraSkidakare(int extraSkidakare) {
 		this.extraSkidakare = extraSkidakare;
 	}
 
-
 	public int getExtraSkidakare() {
 		return extraSkidakare;
 	}
 
-
 	public List<Skidakare> getSkidakareLista() {
 		return skidakareLista;
 	}
-	
-	
-	
+
 	public Tidtagare getTidtagare() {
 		return tidtagare;
 	}
@@ -48,36 +43,33 @@ public class Registrering {
 		this.tidtagare = tidtagare;
 	}
 
-
-
-
-
 	public void registrator() {
 
 		Scanner scan = new Scanner(System.in);
-		
-		System.out.println("Hur m�nga �kare vill du registrera?: ");
+
+		System.out.println("Hur många åkare vill du registrera?: ");
 		int antalSkidakare = scan.nextInt();
-		RandomStartnummer rs = new RandomStartnummer(antalSkidakare + getExtraSkidakare()); //Lägger till extra skidåkare
+		RandomStartnummer rs = new RandomStartnummer(antalSkidakare + getExtraSkidakare()); // Lägger till extra
+																							// skidåkare
 		System.out.println("TEST: Antal Skidåkare att registrera manuellt" + antalSkidakare);
 		for (int i = 0; i < antalSkidakare; i++) {
-			System.out.println("Fyll i f�ljande: F�rnamn, Efternamn, Land och Klubb: ");
+			System.out.println("Fyll i följande: Förnamn, Efternamn, Land och Klubb: ");
 			skidakareLista.add(new Skidakare(rs.getStartnummer(), scan.next(), scan.next(), scan.next(), scan.next()));
 		}
 		for (int i = 0; i < getExtraSkidakare(); i++) {
 			registreraExtraSkidakare(rs);
 		}
 	}
+
 	public void registreraExtraSkidakare(RandomStartnummer rs) {
 		RandomSkidakare randomSkidakare = new RandomSkidakare();
-		
+
 		String minSkidakare = randomSkidakare.getSkidakare();
 		String[] namesList = minSkidakare.split(",");
-			skidakareLista.add(new Skidakare(rs.getStartnummer(), namesList[0].trim(), namesList[1].trim(), 
-					namesList[2].trim(), namesList[3].trim()));
+		skidakareLista.add(new Skidakare(rs.getStartnummer(), namesList[0].trim(), namesList[1].trim(),
+				namesList[2].trim(), namesList[3].trim()));
 	}
-	
-	
+
 	public void startTid(IndividuellStart is) {
 //		Skapa();
 		registrator();
@@ -89,9 +81,9 @@ public class Registrering {
 			skidakareLista.get(i).setTid(tidtagare);
 		}
 	}
-	
-	//Funktion för att vända på lista, exempel med 5 skidåkare
-	//börjar skidåkare med startnummer 1 först
+
+	// Funktion för att vända på lista, exempel med 5 skidåkare
+	// börjar skidåkare med startnummer 1 först
 	public int reverseOrder(int numberToReverse) {
 		int[] reverseArray = new int[skidakareLista.size()];
 		int j = 0;
@@ -102,29 +94,25 @@ public class Registrering {
 		int reverseNumber = reverseArray[numberToReverse - 1];
 		return reverseNumber + 1;
 	}
-	
-	final Comparator<Skidakare> VIA_STARTNUMMER =
-			  new Comparator<Skidakare>() {
 
-				@Override
-				public int compare(Skidakare skid1, Skidakare skid2) {
-					if(skid1.getStartnummer() > skid2.getStartnummer()) {
-						return 1;
-					} else {
-						return -1;
-					}
-				}
-			  };
-	
-	
+	// Sorterar lista efter startnummer
+	final Comparator<Skidakare> VIA_STARTNUMMER = new Comparator<Skidakare>() {
+
+		@Override
+		public int compare(Skidakare skid1, Skidakare skid2) {
+			if (skid1.getStartnummer() > skid2.getStartnummer()) {
+				return 1;
+			} else {
+				return -1;
+			}
+		}
+	};
+
 	public void printSkidakare() {
-	Collections.sort(skidakareLista, VIA_STARTNUMMER);
-	
-	for(Skidakare skid : skidakareLista) {
-		System.out.println(skid);
+		Collections.sort(skidakareLista, VIA_STARTNUMMER);
+
+		for (Skidakare skid : skidakareLista) {
+			System.out.println(skid);
+		}
 	}
-
-	
-}
-
 }
