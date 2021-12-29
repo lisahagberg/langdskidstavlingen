@@ -14,8 +14,21 @@ import edu.grupp4b.tidtagare.Tidtagare;
 
 public class Registrering {
 	
-	private List<Skidakare> skidakareLista = new ArrayList<Skidakare>();
+	private List<Skidakare> skidakareLista;
 	private Tidtagare tidtagare;
+	private int extraSkidakare;
+	
+	public Registrering(){
+		skidakareLista = new ArrayList<>();
+		setExtraSkidakare(5);
+	}
+
+
+	public void setExtraSkidakare(int extraSkidakare) {
+		this.extraSkidakare = extraSkidakare;
+	}
+
+
 
 	public List<Skidakare> getSkidakareLista() {
 		return skidakareLista;
@@ -41,7 +54,7 @@ public class Registrering {
 		
 		System.out.println("Hur m�nga �kare vill du registrera?: ");
 		int antalSkidakare = scan.nextInt();
-		RandomStartnummer rs = new RandomStartnummer(antalSkidakare +3); //Lägger till 3 extra skidåkare
+		RandomStartnummer rs = new RandomStartnummer(antalSkidakare + extraSkidakare); //Lägger till extra skidåkare
 		System.out.println("TEST: Antal Skidåkare att registrera manuellt" + antalSkidakare);
 		for (int i = 0; i < antalSkidakare; i++) {
 			System.out.println("Fyll i f�ljande: F�rnamn, Efternamn, Land och Klubb: ");
