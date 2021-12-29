@@ -41,7 +41,7 @@ public class StartaTavling {
 					for (int i = 0; i < reg.getSkidakareLista().size(); i++) {
 						if (reg.getSkidakareLista().get(i).getStartnummer() == startnr) {
 							mal.registreraMal(reg.getSkidakareLista().get(i));
-							System.out.println("Målgång regisrerad för Skidåkare med " + "startnummer " + startnr);
+							System.out.println("Målgång registrerad för Skidåkare med " + "startnummer " + startnr);
 							reg.getSkidakareLista().remove(reg.getSkidakareLista().get(i));
 							isFound = true;
 							break;
