@@ -11,12 +11,19 @@ public class RandomStartnummer {
 	private List<Integer> myList = new ArrayList<Integer>(mySize);
 	
 	//Konstruktor
-	public RandomStartnummer() {
-		mySize = 5;
-        for(int i = 1; i <= mySize; i++) {
-        	myList.add(i);
-        }
+	public RandomStartnummer(int mySize) {
+		super();
+		this.mySize = mySize;
+		for(int i = 1; i <= mySize; i++) {
+			myList.add(i);
+		}
+		System.out.println("TEST: Storlek på SkidakarLista: " + myList.size());
 	}
+
+	public void setMySize(int mySize) {
+		this.mySize = mySize;
+	}
+
 	
 	public int getStartnummer() {
 		Random rand = new Random();

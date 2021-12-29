@@ -14,12 +14,12 @@ public class StartaTavling {
 		//System.out.println("Tid sedan programmet startade: " + tidtagare);
 		Anmalan anmalan = new Anmalan();
 		anmalan.registrering();
-		SkapaSkidakare.startTid(anmalan.getInvStart());
-		System.out.println("\n5 skidåkare automatiskt skapade");
-		SkapaSkidakare.printSkidakare();
+		Registrering reg = new Registrering();
+		reg.startTid(anmalan.getInvStart());
+//		System.out.println("\n5 skidåkare automatiskt skapade");
+//		SkapaSkidakare.printSkidakare();
 		// SkapaSkidakare.Skapa();
-//		Registrering reg = new Registrering();
-//		reg.registrator();
+		
 		// Skapar object av målgång
 		Malgang mal = new Malgang();
 
@@ -34,7 +34,8 @@ public class StartaTavling {
 			case "1" -> {
 				System.out.println("Tid sedan programmet startade: " + tidtagare);
 
-				SkapaSkidakare.printSkidakare();
+//				SkapaSkidakare.printSkidakare();
+				reg.printSkidakare();
 			}
 			case "2" -> {
 				System.out.println("\nAnge startnummer för åkare du vill kontrollera:");

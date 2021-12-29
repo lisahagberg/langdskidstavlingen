@@ -15,18 +15,18 @@ public class SkapaSkidakare {
 	public static List<Skidakare> skidakare = new ArrayList<>();
 	public static String time;
 
-	//Skapar 5 tillfälliga skidåkare för testning
-	public static void Skapa() {
-		RandomStartnummer rs = new RandomStartnummer();
-
-		for (int i = 0; i < 5; i++) {
-			skidakare.add(new Skidakare(rs.getStartnummer(), "Inge", "Glid", "Swe", "Bollnäs IF"));
-		}
-	}
+//	//Skapar 5 tillfälliga skidåkare för testning
+//	public static void Skapa() {
+//		RandomStartnummer rs = new RandomStartnummer();
+//
+//		for (int i = 0; i < 5; i++) {
+//			skidakare.add(new Skidakare(rs.getStartnummer(), "Inge", "Glid", "Swe", "Bollnäs IF"));
+//		}
+//	}
 
 	//Hämtar antal sekunder från från objektet IndividuellStart
 	public static void startTid(IndividuellStart is) {
-		Skapa();
+//		Skapa();
 		int sek = is.getAntalSekunder();
 
 		for (int i = 0; i < skidakare.size(); i++) {
@@ -51,13 +51,13 @@ public class SkapaSkidakare {
 				}
 			  };
 			  
-	public static void printSkidakare() {
-		Collections.sort(skidakare, VIA_STARTNUMMER);
-		
-		for(Skidakare skid : skidakare) {
-			System.out.println(skid);
-		}
-	}
+//	public static void printSkidakare() {
+//		Collections.sort(skidakare, VIA_STARTNUMMER);
+//		
+//		for(Skidakare skid : skidakare) {
+//			System.out.println(skid);
+//		}
+//	}
 
 	//Funktion för att vända på lista, exempel med 5 skidåkare
 	//börjar skidåkare med startnummer 1 först
