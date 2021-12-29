@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import edu.grupp4b.skidakare.SkapaSkidakare;
 import edu.grupp4b.skidakare.Skidakare;
 
 public class Malgang {
