@@ -42,13 +42,11 @@ public class Anmalan {
 				System.out.println("Tävling med Jaktstart är tyvärr under uppbyggnad");
 				System.out.print("Försök igen med ett annat alternativ: ");
 				val = scanner.next();
-				//jStart = new Jaktstart();
 			}
 			case "3" -> {
 				System.out.println("Tävling med Masstart är tyvärr under uppbyggnad");
 				System.out.print("Försök igen med ett annat alternativ: ");
 				val = scanner.next();
-				//mStart = new Masstart();
 			}
 			default -> {
 				System.out.print("Felaktig inmatning, försök igen: ");
