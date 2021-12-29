@@ -10,11 +10,16 @@ public class RandomStartnummer {
 	private int listSize;	
 	private List<Integer> startnummerLista = new ArrayList<Integer>(listSize);
 	
+	/**
+	 * 
+	 * @param listaStorlek - Storlek på lista för att dela ut startnummer
+	 */
+	
 	//Konstruktor
-	public RandomStartnummer(int mySize) {
+	public RandomStartnummer(int listaStorlek) {
 		super();
-		this.listSize = mySize;
-		for(int i = 1; i <= mySize; i++) {
+		this.listSize = listaStorlek;
+		for(int i = 1; i <= listaStorlek; i++) {
 			startnummerLista.add(i);
 		}
 		System.out.println("TEST: Storlek på SkidakarLista: " + startnummerLista.size());

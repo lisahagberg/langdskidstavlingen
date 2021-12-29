@@ -71,7 +71,6 @@ public class Registrering {
 	}
 
 	public void startTid(IndividuellStart is) {
-//		Skapa();
 		registrator();
 		int sek = is.getAntalSekunder();
 

@@ -1,11 +1,14 @@
 package edu.grupp4b.tavlingsform;
 
-import java.util.Scanner;
-
 public class IndividuellStart {
 
 	private int antalSekunder;
 
+	/**
+	 * 
+	 * @param antalSekunder - Sekunder på inviduella tävlingen (15 eller 30 sek)
+	 */
+	
 	public IndividuellStart(int antalSekunder) {
 		super();
 		setAntalSekunder(antalSekunder);
@@ -16,8 +19,6 @@ public class IndividuellStart {
 	}
 
 	public void setAntalSekunder(int antalSekunder) {
-
-		// TODO säkerställ att användaren bara kan mata in 1 eller två.
 		if (antalSekunder == 1) {
 			this.antalSekunder = 15;
 		} else if (antalSekunder == 2) {
@@ -26,8 +27,6 @@ public class IndividuellStart {
 			while (antalSekunder != 1 && antalSekunder != 2) {
 				System.out.println("felaktig inmatning, välj [1] eller [2]: ");
 			}
-
 		}
 	}
-
 }
