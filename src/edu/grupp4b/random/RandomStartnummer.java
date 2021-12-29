@@ -7,27 +7,27 @@ import java.util.Random;
 public class RandomStartnummer {
 	
 	private int startnummer;
-	private int mySize;	
-	private List<Integer> myList = new ArrayList<Integer>(mySize);
+	private int listSize;	
+	private List<Integer> startnummerLista = new ArrayList<Integer>(listSize);
 	
 	//Konstruktor
 	public RandomStartnummer(int mySize) {
 		super();
-		this.mySize = mySize;
+		this.listSize = mySize;
 		for(int i = 1; i <= mySize; i++) {
-			myList.add(i);
+			startnummerLista.add(i);
 		}
-		System.out.println("TEST: Storlek på SkidakarLista: " + myList.size());
+		System.out.println("TEST: Storlek på SkidakarLista: " + startnummerLista.size());
 	}
 
 	public void setMySize(int mySize) {
-		this.mySize = mySize;
+		this.listSize = mySize;
 	}
 
 	
 	public int getStartnummer() {
 		Random rand = new Random();
-		int index = rand.nextInt(myList.size());
-		return startnummer = myList.remove(index);
+		int index = rand.nextInt(startnummerLista.size());
+		return startnummer = startnummerLista.remove(index);
 	}
 }

@@ -29,6 +29,10 @@ public class Registrering {
 	}
 
 
+	public int getExtraSkidakare() {
+		return extraSkidakare;
+	}
+
 
 	public List<Skidakare> getSkidakareLista() {
 		return skidakareLista;
@@ -54,13 +58,13 @@ public class Registrering {
 		
 		System.out.println("Hur m�nga �kare vill du registrera?: ");
 		int antalSkidakare = scan.nextInt();
-		RandomStartnummer rs = new RandomStartnummer(antalSkidakare + extraSkidakare); //Lägger till extra skidåkare
+		RandomStartnummer rs = new RandomStartnummer(antalSkidakare + getExtraSkidakare()); //Lägger till extra skidåkare
 		System.out.println("TEST: Antal Skidåkare att registrera manuellt" + antalSkidakare);
 		for (int i = 0; i < antalSkidakare; i++) {
 			System.out.println("Fyll i f�ljande: F�rnamn, Efternamn, Land och Klubb: ");
 			skidakareLista.add(new Skidakare(rs.getStartnummer(), scan.next(), scan.next(), scan.next(), scan.next()));
 		}
-		for (int i = 0; i < 3; i++) {
+		for (int i = 0; i < getExtraSkidakare(); i++) {
 			registreraExtraSkidakare(rs);
 		}
 	}
