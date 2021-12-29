@@ -3,14 +3,21 @@ package edu.grupp4b.skidakare;
 import edu.grupp4b.tidtagare.Tidtagare;
 
 public class Skidakare extends Person implements Comparable<Skidakare>{
-/**
- *@param land - hallå
- */
+
 	private String land;
 	private String klubb;
 	private int startnummer;
 	private Tidtagare tid;
 	private String finalTid;
+
+	/**
+	 * 
+	 * @param startnummer
+	 * @param fornamn
+	 * @param efternamn
+	 * @param land
+	 * @param klubb
+	 */
 	
 	//Konstruktor
 	public Skidakare(int startnummer, String fornamn, String efternamn, String land, String klubb) {
