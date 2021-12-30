@@ -63,16 +63,16 @@ public class Registrering {
 			}
 		}
 
-		RandomStartnummer rs = new RandomStartnummer(antalSkidakare + getExtraSkidakare()); // Lägger till extra
+		RandomStartnummer rndmStartNr = new RandomStartnummer(antalSkidakare + getExtraSkidakare()); // Lägger till extra
 																							// skidåkare
 
 		for (int i = 0; i < antalSkidakare; i++) {
 			System.out.println("Fyll i följande: Förnamn, Efternamn, Land och Klubb: ");
-			skidakareLista.add(new Skidakare(rs.getStartnummer(), scan.next(), scan.next(), scan.next(),
+			skidakareLista.add(new Skidakare(rndmStartNr.getStartnummer(), scan.next(), scan.next(), scan.next(),
 					scan.next()));
 		}
 		for (int i = 0; i < getExtraSkidakare(); i++) {
-			registreraExtraSkidakare(rs);
+			registreraExtraSkidakare(rndmStartNr);
 		}
 		System.out.println(antalSkidakare + " skidåkare registrerade plus " + getExtraSkidakare() + " extra skidåkare");
 	}
@@ -95,6 +95,7 @@ public class Registrering {
 			tidtagare = new Tidtagare((revNumber * sek) - sek);
 			skidakareLista.get(i).setTid(tidtagare);
 		}
+		printSkidakare();
 	}
 
 	// Funktion för att vända på lista, exempel med 5 skidåkare
