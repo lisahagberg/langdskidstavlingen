@@ -20,7 +20,7 @@ public class Registrering {
 
 	public Registrering() {
 		skidakareLista = new ArrayList<>();
-		setExtraSkidakare(5);
+		setExtraSkidakare(3);
 	}
 
 	public void setExtraSkidakare(int extraSkidakare) {
@@ -47,15 +47,29 @@ public class Registrering {
 
 		Scanner scan = new Scanner(System.in);
 
-		System.out.println("Hur många åkare vill du registrera?: ");
-		int antalSkidakare = scan.nextInt();
+		System.out.print("Hur många åkare vill du registrera?: ");
+		int antalSkidakare = 0;
+		while (true) {
+			try {
+				antalSkidakare = scan.nextInt();
+				while (antalSkidakare < 0) {
+					System.out.println("Negativt värde, försök igen.");
+					antalSkidakare = scan.nextInt();
+				}
+				break;
+			} catch (Exception ex) {
+				scan.nextLine();
+				System.out.println("Felaktig inmatning");
+			}
+		}
+
 		RandomStartnummer rs = new RandomStartnummer(antalSkidakare + getExtraSkidakare()); // Lägger till extra
 																							// skidåkare
 
 		for (int i = 0; i < antalSkidakare; i++) {
 			System.out.println("Fyll i följande: Förnamn, Efternamn, Land och Klubb: ");
-			skidakareLista.add(new Skidakare(rs.getStartnummer(), scan.nextLine(), 
-					scan.nextLine(), scan.nextLine(), scan.nextLine()));
+			skidakareLista.add(new Skidakare(rs.getStartnummer(), scan.next(), scan.next(), scan.next(),
+					scan.next()));
 		}
 		for (int i = 0; i < getExtraSkidakare(); i++) {
 			registreraExtraSkidakare(rs);
@@ -96,24 +110,8 @@ public class Registrering {
 		return reverseNumber + 1;
 	}
 
-	// Sorterar lista efter startnummer
-	final Comparator<Skidakare> VIA_STARTNUMMER = new Comparator<Skidakare>() {
-
-		@Override
-		public int compare(Skidakare skid1, Skidakare skid2) {
-			if (skid1.getStartnummer() > skid2.getStartnummer()) {
-				return 1;
-			} else {
-				return -1;
-			}
-		}
-	};
-
 	public void printSkidakare() {
-		Collections.sort(skidakareLista, VIA_STARTNUMMER);
-
-		for (Skidakare skid : skidakareLista) {
-			System.out.println(skid);
-		}
+		Collections.sort(skidakareLista, (Skidakare m, Skidakare n) -> m.getStartnummer() - n.getStartnummer());
+		skidakareLista.forEach(skid -> System.out.println(skid));
 	}
 }
