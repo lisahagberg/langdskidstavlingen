@@ -16,6 +16,7 @@ public class RandomStartnummer {
 	 */
 	
 	//Konstruktor
+	//Skapar en lista beroende på hur många skidåkare som är med i tävling
 	public RandomStartnummer(int listaStorlek) {
 		super();
 		this.listSize = listaStorlek;
@@ -28,7 +29,7 @@ public class RandomStartnummer {
 		this.listSize = mySize;
 	}
 
-	
+	//Retunerar ett random startnummer och tar bort det ur listan (så det ej kan användas igen)
 	public int getStartnummer() {
 		Random rand = new Random();
 		int index = rand.nextInt(startnummerLista.size());
