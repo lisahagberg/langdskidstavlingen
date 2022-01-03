@@ -2,9 +2,9 @@ package edu.grupp4b.anmalan;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import edu.grupp4b.random.RandomSkidakare;
 import edu.grupp4b.random.RandomStartnummer;
@@ -43,7 +43,7 @@ public class Registrering {
 		this.tidtagare = tidtagare;
 	}
 
-	public void registrator() {
+	public void registrator() throws InterruptedException {
 
 		Scanner scan = new Scanner(System.in);
 
@@ -75,6 +75,8 @@ public class Registrering {
 			registreraExtraSkidakare(rndmStartNr, randomSkidakare);
 		}
 		System.out.println(antalSkidakare + " skidåkare registrerade plus " + getAntalExtraSkidakare() + " extra skidåkare");
+		System.out.println("Startnummer lottas:");
+		 TimeUnit.SECONDS.sleep(1);
 	}
 	//Registrerar extra skidåkare
 	public void registreraExtraSkidakare(RandomStartnummer rs, RandomSkidakare randomSkidakare) {
@@ -85,7 +87,7 @@ public class Registrering {
 	}
 	//Hämtar den tid som är vald (15 eller 30 sek) och adderar tiden omvänt för respektive startnummer 
 	//Detta då skidåkarna har redan börjat åkt när programmet startar
-	public void startTid(IndividuellStart is) {
+	public void startTid(IndividuellStart is) throws InterruptedException {
 		registrator();
 		int sek = is.getAntalSekunder();
 
@@ -110,8 +112,17 @@ public class Registrering {
 		return reverseNumber + 1;
 	}
 
-	public void printSkidakare() {
+	public void printSkidakare() throws InterruptedException {
 		Collections.sort(skidakareLista, (Skidakare m, Skidakare n) -> m.getStartnummer() - n.getStartnummer());
-		skidakareLista.forEach(skid -> System.out.println(skid));
+		
+		skidakareLista.forEach(skid ->  { 
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			 System.out.println(skid);
+		});
 	}
 }
