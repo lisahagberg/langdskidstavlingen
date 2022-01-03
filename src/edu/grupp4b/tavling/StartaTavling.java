@@ -1,7 +1,6 @@
 package edu.grupp4b.tavling;
 
 import java.util.Scanner;
-
 import edu.grupp4b.anmalan.Anmalan;
 import edu.grupp4b.anmalan.Registrering;
 import edu.grupp4b.tidtagare.Tidtagare;
@@ -9,26 +8,23 @@ import edu.grupp4b.tidtagare.Tidtagare;
 public class StartaTavling {
 
 	public static void main(String[] args) throws InterruptedException {
-		Tidtagare tidtagare = new Tidtagare();
-		Anmalan anmalan = new Anmalan();
-		anmalan.registrering();
-		Registrering reg = new Registrering();
+		Tidtagare tidtagare = new Tidtagare(); //Skapar objekt för tidtagare
+		Anmalan anmalan = new Anmalan(); //Skapar objekt för Anmälan
+		anmalan.registrering(); 
+		Registrering reg = new Registrering(); //Skapar objekt för Registrering
 		reg.startTid(anmalan.getInvStart());
-
-		// Skapar object av målgång
-		Malgang mal = new Malgang();
+		Malgang mal = new Malgang(); // Skapar object av målgång
 
 		Scanner scanner = new Scanner(System.in);
 		boolean runMenu = true;
 		while (runMenu) {
-			System.out.println("\n[1] Se skidåkarnas tider\n[2] Registrera målgång\n"
-					+ "[3] Se lista över målgång\n[4] System exit");
+			System.out.println("\n[1] Se mellantid\n[2] Registrera målgång\n"
+					+ "[3] Se lista över målgång\n[4] Avsluta program");
 			System.out.print("Val: ");
 
 			switch (scanner.next()) {
 			case "1" -> {
-				System.out.println("Tid sedan programmet startade: " + tidtagare);
-
+				System.out.println("Mellantid: " + tidtagare);
 				reg.printSkidakare();
 			}
 			case "2" -> {
@@ -42,7 +38,7 @@ public class StartaTavling {
 					for (int i = 0; i < reg.getSkidakareLista().size(); i++) {
 						if (reg.getSkidakareLista().get(i).getStartnummer() == startnr) {
 							mal.registreraMal(reg.getSkidakareLista().get(i));
-							System.out.println("Målgång registrerad för Skidåkare med " + "startnummer " + startnr);
+							System.out.println("Målgång registrerad för Skidåkare med startnummer " + startnr);
 							reg.getSkidakareLista().remove(reg.getSkidakareLista().get(i));
 							finnsSkidakare = true;
 							break;
@@ -51,10 +47,10 @@ public class StartaTavling {
 
 				} catch (Exception ex) {
 					scanner.nextLine();
-					System.out.println("Felaktig inmatning");
+					System.err.println("Felaktig inmatning");
 				}
 				if (!finnsSkidakare) {
-					System.out.println("Skidåkare finns tyvärr inte eller" + "\när redan i mål");
+					System.err.println("Skidåkare finns tyvärr inte eller har redan gått i mål");
 				}
 			}
 			case "3" -> {
@@ -65,8 +61,7 @@ public class StartaTavling {
 				System.exit(0);
 			}
 			default -> {
-
-				System.out.println("Felaktig inmatning");
+				System.err.println("Felaktig inmatning");
 			}
 			}
 		}
