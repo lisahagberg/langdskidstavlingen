@@ -62,9 +62,8 @@ public class Registrering {
 				System.out.println("Felaktig inmatning");
 			}
 		}
-
-		RandomStartnummer rndmStartNr = new RandomStartnummer(antalSkidakare + getAntalExtraSkidakare()); // Lägger till extra
-																							// skidåkare
+		// Lägger till extra antal skidåkare
+		RandomStartnummer rndmStartNr = new RandomStartnummer(antalSkidakare + getAntalExtraSkidakare()); 
 
 		for (int i = 0; i < antalSkidakare; i++) {
 			System.out.println("Fyll i följande: Förnamn, Efternamn, Land och Klubb: ");
@@ -77,14 +76,15 @@ public class Registrering {
 		}
 		System.out.println(antalSkidakare + " skidåkare registrerade plus " + getAntalExtraSkidakare() + " extra skidåkare");
 	}
-
+	//Registrerar extra skidåkare
 	public void registreraExtraSkidakare(RandomStartnummer rs, RandomSkidakare randomSkidakare) {
 		String minSkidakare = randomSkidakare.getSkidakare();
 		String[] namesList = minSkidakare.split(",");
 		skidakareLista.add(new Skidakare(rs.getStartnummer(), namesList[0].trim(), namesList[1].trim(),
 				namesList[2].trim(), namesList[3].trim()));
 	}
-
+	//Hämtar den tid som är vald (15 eller 30 sek) och adderar tiden omvänt för respektive startnummer 
+	//Detta då skidåkarna har redan börjat åkt när programmet startar
 	public void startTid(IndividuellStart is) {
 		registrator();
 		int sek = is.getAntalSekunder();
