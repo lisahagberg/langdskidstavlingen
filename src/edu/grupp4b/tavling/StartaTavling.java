@@ -37,7 +37,8 @@ public class StartaTavling {
 				boolean finnsSkidakare = false;
 				try {
 					int startnr = scanner.nextInt();
-
+					//Lägger till skidåkare i målgångslista med matchat startnummer och
+					//tar bort skidåkare i nuvarande lista över åkande just nu 
 					for (int i = 0; i < reg.getSkidakareLista().size(); i++) {
 						if (reg.getSkidakareLista().get(i).getStartnummer() == startnr) {
 							mal.registreraMal(reg.getSkidakareLista().get(i));
@@ -57,7 +58,7 @@ public class StartaTavling {
 				}
 			}
 			case "3" -> {
-				mal.seMal();
+				mal.seMal(); //Printar skidåkare som gått i mål
 			}
 			case "4" -> {
 				System.out.println("Avslutar program");
