@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-
 import edu.grupp4b.random.RandomSkidakare;
 import edu.grupp4b.random.RandomStartnummer;
 import edu.grupp4b.skidakare.Skidakare;
@@ -44,9 +43,7 @@ public class Registrering {
 	}
 
 	public void registrator() throws InterruptedException {
-
 		Scanner scan = new Scanner(System.in);
-
 		System.out.print("Hur många åkare vill du registrera?: ");
 		int antalSkidakare = 0;
 		while (true) {
@@ -101,17 +98,16 @@ public class Registrering {
 			skidakareLista.get(i).setTid(tidtagare);
 		}
 		Collections.sort(skidakareLista, (Skidakare m, Skidakare n) -> m.getStartnummer() - n.getStartnummer());
-		skidakareLista.forEach(skid -> { System.out.println("Startnummer: " + skid.getStartnummer() + ", Namn: "
-				+ skid.getFornamn() + " " + skid.getEfternamn() + "\t Land: "
-				+ skid.getLand() + ", Klubb: " + skid.getKlubb());
-		try {
-			TimeUnit.SECONDS.sleep(1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-				});
-		
+		skidakareLista.forEach(skid -> {
+			System.out.println("Startnummer: " + skid.getStartnummer() + ", Namn: " + skid.getFornamn() + " "
+					+ skid.getEfternamn() + "\t Land: " + skid.getLand() + ", Klubb: " + skid.getKlubb());
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
 	}
 
 	// Funktion för att vända på lista, exempel med 5 skidåkare
@@ -127,9 +123,8 @@ public class Registrering {
 		return reverseNumber + 1;
 	}
 
-	public void printSkidakare() throws InterruptedException {
+	public void printSkidakare() {
 		Collections.sort(skidakareLista, (Skidakare m, Skidakare n) -> m.getStartnummer() - n.getStartnummer());
 		skidakareLista.forEach(skid -> System.out.println(skid));
-
 	}
 }
