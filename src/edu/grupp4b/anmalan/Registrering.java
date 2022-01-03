@@ -16,19 +16,19 @@ public class Registrering {
 
 	private List<Skidakare> skidakareLista;
 	private Tidtagare tidtagare;
-	private int extraSkidakare;
+	private int antalExtraSkidakare;
 
 	public Registrering() {
 		skidakareLista = new ArrayList<>();
-		setExtraSkidakare(3);
+		setAntalExtraSkidakare(5);
 	}
 
-	public void setExtraSkidakare(int extraSkidakare) {
-		this.extraSkidakare = extraSkidakare;
+	public void setAntalExtraSkidakare(int extraSkidakare) {
+		this.antalExtraSkidakare = extraSkidakare;
 	}
 
-	public int getExtraSkidakare() {
-		return extraSkidakare;
+	public int getAntalExtraSkidakare() {
+		return antalExtraSkidakare;
 	}
 
 	public List<Skidakare> getSkidakareLista() {
@@ -63,7 +63,7 @@ public class Registrering {
 			}
 		}
 
-		RandomStartnummer rndmStartNr = new RandomStartnummer(antalSkidakare + getExtraSkidakare()); // Lägger till extra
+		RandomStartnummer rndmStartNr = new RandomStartnummer(antalSkidakare + getAntalExtraSkidakare()); // Lägger till extra
 																							// skidåkare
 
 		for (int i = 0; i < antalSkidakare; i++) {
@@ -71,15 +71,14 @@ public class Registrering {
 			skidakareLista.add(new Skidakare(rndmStartNr.getStartnummer(), scan.next(), scan.next(), scan.next(),
 					scan.next()));
 		}
-		for (int i = 0; i < getExtraSkidakare(); i++) {
-			registreraExtraSkidakare(rndmStartNr);
+		RandomSkidakare randomSkidakare = new RandomSkidakare();
+		for (int i = 0; i < getAntalExtraSkidakare(); i++) {
+			registreraExtraSkidakare(rndmStartNr, randomSkidakare);
 		}
-		System.out.println(antalSkidakare + " skidåkare registrerade plus " + getExtraSkidakare() + " extra skidåkare");
+		System.out.println(antalSkidakare + " skidåkare registrerade plus " + getAntalExtraSkidakare() + " extra skidåkare");
 	}
 
-	public void registreraExtraSkidakare(RandomStartnummer rs) {
-		RandomSkidakare randomSkidakare = new RandomSkidakare();
-
+	public void registreraExtraSkidakare(RandomStartnummer rs, RandomSkidakare randomSkidakare) {
 		String minSkidakare = randomSkidakare.getSkidakare();
 		String[] namesList = minSkidakare.split(",");
 		skidakareLista.add(new Skidakare(rs.getStartnummer(), namesList[0].trim(), namesList[1].trim(),
