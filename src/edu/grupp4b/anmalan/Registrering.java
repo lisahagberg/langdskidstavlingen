@@ -2,10 +2,9 @@ package edu.grupp4b.anmalan;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
-
+import java.util.concurrent.TimeUnit;
 import edu.grupp4b.random.RandomSkidakare;
 import edu.grupp4b.random.RandomStartnummer;
 import edu.grupp4b.skidakare.Skidakare;
@@ -43,10 +42,8 @@ public class Registrering {
 		this.tidtagare = tidtagare;
 	}
 
-	public void registrator() {
-
+	public void registrator() throws InterruptedException {
 		Scanner scan = new Scanner(System.in);
-
 		System.out.print("Hur många åkare vill du registrera?: ");
 		int antalSkidakare = 0;
 		while (true) {
@@ -63,29 +60,35 @@ public class Registrering {
 			}
 		}
 		// Lägger till extra antal skidåkare
-		RandomStartnummer rndmStartNr = new RandomStartnummer(antalSkidakare + getAntalExtraSkidakare()); 
+		RandomStartnummer rndmStartNr = new RandomStartnummer(antalSkidakare + getAntalExtraSkidakare());
 
 		for (int i = 0; i < antalSkidakare; i++) {
 			System.out.println("Fyll i följande: Förnamn, Efternamn, Land och Klubb: ");
-			skidakareLista.add(new Skidakare(rndmStartNr.getStartnummer(), scan.next(), scan.next(), scan.next(),
-					scan.next()));
+			skidakareLista.add(
+					new Skidakare(rndmStartNr.getStartnummer(), scan.next(), scan.next(), scan.next(), scan.next()));
 		}
 		RandomSkidakare randomSkidakare = new RandomSkidakare();
 		for (int i = 0; i < getAntalExtraSkidakare(); i++) {
 			registreraExtraSkidakare(rndmStartNr, randomSkidakare);
 		}
-		System.out.println(antalSkidakare + " skidåkare registrerade plus " + getAntalExtraSkidakare() + " extra skidåkare");
+		System.out.println(
+				antalSkidakare + " skidåkare registrerade plus " + getAntalExtraSkidakare() + " extra skidåkare");
+		System.out.println("Startnummer lottas...");
+		TimeUnit.SECONDS.sleep(1);
 	}
-	//Registrerar extra skidåkare
+
+	// Registrerar extra skidåkare
 	public void registreraExtraSkidakare(RandomStartnummer rs, RandomSkidakare randomSkidakare) {
 		String minSkidakare = randomSkidakare.getSkidakare();
 		String[] namesList = minSkidakare.split(",");
 		skidakareLista.add(new Skidakare(rs.getStartnummer(), namesList[0].trim(), namesList[1].trim(),
 				namesList[2].trim(), namesList[3].trim()));
 	}
-	//Hämtar den tid som är vald (15 eller 30 sek) och adderar tiden omvänt för respektive startnummer 
-	//Detta då skidåkarna har redan börjat åkt när programmet startar
-	public void startTid(IndividuellStart is) {
+
+	// Hämtar den tid som är vald (15 eller 30 sek) och adderar tiden omvänt för
+	// respektive startnummer
+	// Detta då skidåkarna har redan börjat åkt när programmet startar
+	public void startTid(IndividuellStart is) throws InterruptedException {
 		registrator();
 		int sek = is.getAntalSekunder();
 
@@ -94,7 +97,17 @@ public class Registrering {
 			tidtagare = new Tidtagare((revNumber * sek) - sek);
 			skidakareLista.get(i).setTid(tidtagare);
 		}
-		printSkidakare();
+		Collections.sort(skidakareLista, (Skidakare m, Skidakare n) -> m.getStartnummer() - n.getStartnummer());
+		skidakareLista.forEach(skid -> {
+			System.out.println("Startnummer: " + skid.getStartnummer() + ", Namn: " + skid.getFornamn() + " "
+					+ skid.getEfternamn() + "\t Land: " + skid.getLand() + ", Klubb: " + skid.getKlubb());
+			try {
+				TimeUnit.SECONDS.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		});
 	}
 
 	// Funktion för att vända på lista, exempel med 5 skidåkare
