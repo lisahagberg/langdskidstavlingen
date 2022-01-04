@@ -44,7 +44,6 @@ public class StartaTavling {
 							break;
 						}
 					}
-
 				} catch (Exception ex) {
 					scanner.nextLine();
 					System.err.println("Felaktig inmatning");
@@ -66,7 +65,6 @@ public class StartaTavling {
 			}
 		}
 		scanner.close();
-
 	}
 
 }
